@@ -1,0 +1,20 @@
+#!/bin/bash
+
+# Variables
+BUCKET_NAME="my-unique-bucket-$(date +%s)"
+REGION="us-east-1"
+
+# Create the S3 bucket
+echo "Creating S3 bucket: $BUCKET_NAME in region $REGION..."
+aws s3api create-bucket --bucket "$BUCKET_NAME" --region "$REGION" \
+  --create-bucket-configuration LocationConstraint="$REGION"
+
+# Enable versioning on the bucket
+echo "Enabling versioning for bucket: $BUCKET_NAME..."
+aws s3api put-bucket-versioning --bucket "$BUCKET_NAME" --versioning-configuration Status=Enabled
+
+# Confirm the bucket and versioning status
+echo "Fetching versioning status for $BUCKET_NAME..."
+aws s3api get-bucket-versioning --bucket "$BUCKET_NAME"
+
+echo " Bucket $BUCKET_NAME created and versioning enabled."
