@@ -2,4 +2,4 @@
 
 echo "this is linux machine"
 echo "command to list cpu details"
-nproc
+free
