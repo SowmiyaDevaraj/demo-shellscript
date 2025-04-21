@@ -1,0 +1,37 @@
+Basic Git Operations
+git init                      # Initialize a new Git repository  
+git clone <repo-url>         # Clone a repository to local  
+git status                   # Check the status of files  
+git add <file>               # Stage specific file(s)  
+git add .                    # Stage all changes in the directory  
+git commit -m "message"      # Commit staged changes with a message  
+git push origin <branch>     # Push commits to remote branch  
+git pull origin <branch>     # Pull latest changes from remote  
+git fetch                    # Fetch latest changes without merging  
+git log                      # View commit history  
+
+Branching and Merging
+git branch                           # List all branches  
+git branch <branch-name>            # Create a new branch  
+git checkout <branch>               # Switch to a branch  
+git checkout -b <branch>            # Create and switch to new branch  
+git merge <branch>                  # Merge specified branch into current branch  
+git rebase <branch>                 # Reapply commits on top of another branch  
+git branch -d <branch>              # Delete local branch  
+git push origin --delete <branch>  # Delete remote branch  
+
+Conflict Resolution
+git mergetool          # Launch merge conflict resolution tool  
+git diff               # View code differences  
+git reset --hard       # Discard all changes and reset to last commit  
+git stash              # Temporarily store changes  
+git stash pop          # Reapply stashed changes  
+
+CI/CD & DevOps Integration
+git tag <tag-name>                          # Create a new tag  
+git push origin <tag>                       # Push tag to remote  
+git describe --tags                         # Show tag info of current commit  
+git show <commit-id>                        # Show details of a specific commit  
+git remote -v                               # View remote URLs  
+git config --global user.name "Name"        # Set global Git user name  
+git config --global user.email "email@example.com"  # Set global Git email  
