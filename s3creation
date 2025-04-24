@@ -13,8 +13,3 @@ aws s3api create-bucket --bucket "$BUCKET_NAME" --region "$REGION" \
 echo "Enabling versioning for bucket: $BUCKET_NAME..."
 aws s3api put-bucket-versioning --bucket "$BUCKET_NAME" --versioning-configuration Status=Enabled
 
-# Confirm the bucket and versioning status
-echo "Fetching versioning status for $BUCKET_NAME..."
-aws s3api get-bucket-versioning --bucket "$BUCKET_NAME"
-
-echo " Bucket $BUCKET_NAME created and versioning enabled."
